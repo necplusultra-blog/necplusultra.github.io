@@ -1,0 +1,21 @@
+---
+layout: default
+title: Archivo de ensayos
+permalink: /ensayos/
+---
+{%- assign ensayos = site.ensayos | sort: 'date' | reverse -%}
+<section class="pt-32 sm:pt-40 pb-24 sm:pb-36" data-filtrable>
+  <div class="max-w-page mx-auto px-4 sm:px-8">
+    <div class="mb-14">
+      <p class="kicker mb-5">{{ site.data.sitio.ensayos.antetitulo }}</p>
+      <h1 class="font-serif text-4xl sm:text-6xl text-ink mb-10">Archivo de <em class="text-accent">ensayos</em></h1>
+      {% include filtros.html %}
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {%- for e in ensayos %}
+      {% include tarjeta-ensayo.html e=e %}
+      {%- endfor %}
+    </div>
+    <p class="sin-resultados hidden text-center text-muted font-light py-10">Todavía no hay ensayos con esta etiqueta.</p>
+  </div>
+</section>

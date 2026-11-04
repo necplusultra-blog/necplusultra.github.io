@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<article class="pt-32 sm:pt-40 pb-24">
+  <header class="max-w-3xl mx-auto px-4 sm:px-8 text-center">
+    <a href="{{ '/ensayos/' | relative_url }}" class="kicker ulink">← Ensayos</a>
+    {%- if page.etiquetas %}
+    <div class="flex flex-wrap justify-center gap-2 mt-10">{% for t in page.etiquetas %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+    {%- endif %}
+    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-ink mt-8">{{ page.title }}</h1>
+    {%- if page.resumen %}
+    <p class="mt-8 text-lg sm:text-xl text-muted font-light leading-relaxed">{{ page.resumen }}</p>
+    {%- endif %}
+    <p class="mt-8 text-xs text-faint">
+      Por <span class="text-ink">{{ page.autor }}</span> · {% include fecha.html fecha=page.date %}{% if page.tiempo_lectura and page.tiempo_lectura != "" %} · {{ page.tiempo_lectura }}{% endif %}
+    </p>
+  </header>
+
+  {%- if page.imagen and page.imagen != "" %}
+  <figure class="max-w-5xl mx-auto px-4 sm:px-8 mt-14">
+    <img src="{{ page.imagen | relative_url }}" alt="" class="w-full h-auto border hairline" />
+  </figure>
+  {%- else %}
+  <div class="max-w-3xl mx-auto px-4 sm:px-8 mt-14"><div class="rule"></div></div>
+  {%- endif %}
+
+  <div class="prosa max-w-[44rem] mx-auto px-4 sm:px-8 mt-14">
+    {{ content }}
+  </div>
+
+  {%- if page.pdf and page.pdf != "" %}
+  <div class="max-w-[44rem] mx-auto px-4 sm:px-8 mt-12">
+    <a href="{{ page.pdf | relative_url }}" class="inline-flex items-center gap-3 border hairline px-6 py-3 text-sm text-ink hover:border-accent hover:text-accent transition" download>
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg>
+      Descargar en PDF
+    </a>
+  </div>
+  {%- endif %}
+</article>
+
+{%- assign otros = site.ensayos | sort: 'date' | reverse -%}
+<section class="border-t hairline py-20 sm:py-28 bg-tinte">
+  <div class="max-w-page mx-auto px-4 sm:px-8">
+    <p class="kicker mb-10">Seguir leyendo</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {%- assign n = 0 -%}
+      {%- for e in otros -%}
+        {%- if e.url == page.url -%}{%- continue -%}{%- endif -%}
+        {%- if n >= 3 -%}{%- break -%}{%- endif -%}
+        {% include tarjeta-ensayo.html e=e %}
+        {%- assign n = n | plus: 1 -%}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

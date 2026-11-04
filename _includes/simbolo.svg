@@ -1,0 +1,47 @@
+<svg class="simbolo w-full h-auto" viewBox="0 50 600 550" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="simbolo-t simbolo-d">
+  <title id="simbolo-t">Símbolo de Crítica inmanente</title>
+  <desc id="simbolo-d">Un círculo, figura de la totalidad social, atravesado por una grieta roja. Un fragmento del círculo se ha desprendido y queda fuera, sin volver a encajar: lo no idéntico.</desc>
+  <defs>
+    <radialGradient id="simbolo-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" style="stop-color: var(--accent); stop-opacity: .30" />
+      <stop offset="1" style="stop-color: var(--accent); stop-opacity: 0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Órbitas exteriores -->
+  <g fill="none" style="stroke: var(--line)" stroke-width="1">
+    <circle cx="300" cy="330" r="252" stroke-dasharray="2 8" />
+    <circle cx="300" cy="330" r="226" />
+  </g>
+
+  <!-- Luz que entra por la fisura -->
+  <ellipse class="halo" cx="300" cy="215" rx="66" ry="150" fill="url(#simbolo-halo)" />
+
+  <!-- La totalidad: círculo al que le falta un fragmento, y anillos interiores -->
+  <g fill="none" style="stroke: var(--ink)" stroke-linecap="round">
+    <path d="M352.4 147.4 A190 190 0 1 1 247.6 147.4" stroke-width="1.6" stroke-opacity=".85" />
+    <circle cx="300" cy="330" r="150" stroke-width="1" stroke-opacity=".34" />
+    <circle cx="300" cy="330" r="110" stroke-width="1" stroke-opacity=".24" />
+    <circle cx="300" cy="330" r="70" stroke-width="1" stroke-opacity=".16" />
+  </g>
+
+  <!-- Corte que interrumpe los anillos -->
+  <polyline points="300,141 289,182 309,221 293,262 314,300 300,338" fill="none" style="stroke: var(--bg)" stroke-width="10" stroke-linejoin="round" />
+
+  <!-- La grieta -->
+  <polyline class="grieta" points="300,141 289,182 309,221 293,262 314,300 300,338" fill="none" style="stroke: var(--accent)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" />
+  <g class="grieta" fill="none" style="stroke: var(--accent)" stroke-width="1" stroke-opacity=".7" stroke-linecap="round">
+    <path d="M309 221 L332 233" />
+    <path d="M293 262 L270 277" />
+    <path d="M314 300 L335 317" />
+  </g>
+
+  <!-- Huella del lugar vacío -->
+  <path class="huella" d="M247.6 147.4 A190 190 0 0 1 352.4 147.4" fill="none" style="stroke: var(--accent)" stroke-width="1" stroke-dasharray="1.5 5" stroke-opacity=".6" />
+
+  <!-- Lo no idéntico: el fragmento desprendido, partido por la grieta, que no vuelve a encajar -->
+  <g class="fragmento" fill="none" style="stroke: var(--accent)" stroke-width="6">
+    <path d="M247.6 147.4 A190 190 0 0 1 297.5 140" />
+    <path d="M303 140 A190 190 0 0 1 352.4 147.4" stroke-opacity=".6" />
+  </g>
+</svg>

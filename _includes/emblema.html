@@ -1,0 +1,5 @@
+{%- if site.data.sitio.hero.imagen and site.data.sitio.hero.imagen != "" -%}
+<img src="{{ site.data.sitio.hero.imagen | relative_url }}" alt="{{ site.data.sitio.hero.pie_imagen | escape }}" class="w-full h-auto" />
+{%- else -%}
+{% include simbolo.svg %}
+{%- endif -%}

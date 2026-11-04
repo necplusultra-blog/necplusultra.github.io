@@ -1,0 +1,150 @@
+{%- assign s = site.data.sitio -%}
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title | strip_html }} — {% endif %}{{ s.nombre }} {{ s.nombre_acento }}{% unless page.title %} — {{ s.lema }}{% endunless %}</title>
+  <meta name="description" content="{% if page.resumen %}{{ page.resumen | strip_html | escape }}{% else %}{{ s.descripcion | escape }}{% endif %}" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+
+  <!-- Aplicar tema guardado antes de pintar -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('ci-theme') === 'light') document.documentElement.classList.remove('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)', surface: 'var(--surface)', surface2: 'var(--surface-2)',
+            line: 'var(--line)', ink: 'var(--ink)', muted: 'var(--muted)', faint: 'var(--faint)',
+            accent: 'var(--accent)', accentsoft: 'var(--accent-soft)'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          maxWidth: { page: '76rem' }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/estilos.css' | relative_url }}" />
+</head>
+
+<body class="overflow-x-hidden">
+  {%- assign inicio = '/' | relative_url -%}
+
+  <!-- ===================== CABECERA ===================== -->
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 border-b border-transparent">
+    <nav class="max-w-page mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <a href="{{ inicio }}" class="font-serif text-xl sm:text-2xl tracking-tight text-ink">
+        {{ s.nombre }} <em class="text-accent font-normal">{{ s.nombre_acento }}</em>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-[13px] text-muted">
+        {%- for item in s.navegacion %}
+        <a href="{% if item.enlace contains '#' %}{{ inicio }}{{ item.enlace }}{% else %}{{ item.enlace }}{% endif %}" class="ulink hover:text-ink transition-colors">{{ item.texto }}</a>
+        {%- endfor %}
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button class="themeToggle switch" type="button" aria-label="Cambiar entre modo claro y oscuro">
+          <span class="knob">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </span>
+        </button>
+        <button id="burger" class="burger md:hidden p-2 -mr-2" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="closed md:hidden fixed inset-x-0 top-16 bottom-0 bg-bg border-t hairline overflow-y-auto">
+      <div class="px-4 pt-10 pb-10 flex flex-col gap-7">
+        {%- for item in s.navegacion %}
+        <a href="{% if item.enlace contains '#' %}{{ inicio }}{{ item.enlace }}{% else %}{{ item.enlace }}{% endif %}" class="m-link font-serif text-3xl text-ink">{{ item.texto }}</a>
+        {%- endfor %}
+        <div class="rule mt-4"></div>
+        <p class="kicker">{{ s.lema }}</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- ===================== PIE ===================== -->
+  <footer id="contacto" class="border-t hairline pt-20 pb-10">
+    <div class="max-w-page mx-auto px-4 sm:px-8">
+      <div class="grid md:grid-cols-12 gap-12 mb-20">
+        <div class="md:col-span-5">
+          <p class="font-serif text-3xl sm:text-4xl text-ink mb-5">{{ s.nombre }} <em class="text-accent">{{ s.nombre_acento }}</em></p>
+          <p class="text-sm text-muted font-light leading-relaxed max-w-sm">{{ s.pie.texto }}</p>
+          {%- if s.correo and s.correo != "" %}
+          <a href="mailto:{{ s.correo }}" class="inline-block mt-8 font-serif text-lg sm:text-xl text-ink ulink break-all">{{ s.correo }}</a>
+          {%- endif %}
+        </div>
+
+        <div class="md:col-span-2 md:col-start-7">
+          <p class="kicker mb-5">Secciones</p>
+          <ul class="space-y-3 text-sm text-muted">
+            {%- for item in s.navegacion %}{% unless item.enlace == "#contacto" %}
+            <li><a href="{% if item.enlace contains '#' %}{{ inicio }}{{ item.enlace }}{% else %}{{ item.enlace }}{% endif %}" class="hover:text-ink transition">{{ item.texto }}</a></li>
+            {%- endunless %}{% endfor %}
+          </ul>
+        </div>
+
+        {%- if s.pie.redes and s.pie.redes.size > 0 %}
+        <div class="md:col-span-2">
+          <p class="kicker mb-5">Redes</p>
+          <ul class="space-y-3 text-sm text-muted">
+            {%- for r in s.pie.redes %}
+            <li><a href="{{ r.enlace }}" class="hover:text-ink transition" {% unless r.enlace contains '#' %}target="_blank" rel="noopener"{% endunless %}>{{ r.nombre }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+
+        {%- endif %}
+        {%- if s.podcast.plataformas and s.podcast.plataformas.size > 0 %}
+        <div class="md:col-span-2">
+          <p class="kicker mb-5">Escuchar</p>
+          <ul class="space-y-3 text-sm text-muted">
+            {%- for p in s.podcast.plataformas %}
+            <li><a href="{{ p.enlace }}" class="hover:text-ink transition" {% unless p.enlace contains '#' %}target="_blank" rel="noopener"{% endunless %}>{{ p.nombre }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endif %}
+      </div>
+
+      <div class="rule mb-8"></div>
+      <div class="flex flex-col sm:flex-row justify-between gap-4 text-xs text-faint">
+        <p>
+          Contenidos bajo licencia
+          <a href="{{ s.pie.licencia_enlace }}" target="_blank" rel="noopener" class="text-muted ulink">{{ s.pie.licencia_nombre }}</a>.
+          {{ s.pie.licencia_nota }}
+        </p>
+        <p>© {{ site.time | date: "%Y" }} {{ s.nombre }} {{ s.nombre_acento }}</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

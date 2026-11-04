@@ -1,0 +1,38 @@
+# ------------------------------------------------------------
+#  Configuración técnica del sitio (normalmente no hace falta tocarla).
+#  Los TEXTOS del sitio se editan en _data/sitio.yml o desde Pages CMS.
+# ------------------------------------------------------------
+title: Crítica inmanente
+lang: es
+timezone: America/Mexico_City
+markdown: kramdown
+
+# Si el sitio se publica en https://usuario.github.io/nombre-repo/
+# y los estilos o imágenes no cargan, quite el "#" de la línea siguiente
+# y escriba el nombre del repositorio:
+# baseurl: "/nombre-repo"
+
+collections:
+  ensayos:
+    output: true
+    permalink: /ensayos/:name/
+  libros:
+    output: true
+    permalink: /libros/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: ensayos
+    values:
+      layout: ensayo
+  - scope:
+      path: ""
+      type: libros
+    values:
+      layout: libro
+
+exclude:
+  - LEEME.md
+  - README.md
+  - .pages.yml

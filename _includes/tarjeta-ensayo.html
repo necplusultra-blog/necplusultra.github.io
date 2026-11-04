@@ -1,0 +1,23 @@
+{%- assign e = include.e -%}
+<article class="card flex flex-col reveal" data-tags="{{ e.etiquetas | join: '|' | escape }}">
+  {%- if e.imagen and e.imagen != "" %}
+  <a href="{{ e.url | relative_url }}" class="block aspect-[16/9] overflow-hidden border-b hairline bg-surface2">
+    <img src="{{ e.imagen | relative_url }}" alt="" loading="lazy" class="w-full h-full object-cover transition duration-700 hover:scale-[1.03]" />
+  </a>
+  {%- endif %}
+  <div class="flex flex-col flex-1 p-7 sm:p-8">
+    <div class="flex items-center justify-between mb-8 text-xs text-faint">
+      <span class="font-serif text-accent text-sm">{% if e.tiempo_lectura and e.tiempo_lectura != "" %}{{ e.tiempo_lectura }}{% else %}Ensayo{% endif %}</span>
+      <span>{% include fecha.html fecha=e.date %}</span>
+    </div>
+    <h3 class="card-title font-serif text-2xl leading-snug text-ink mb-4"><a href="{{ e.url | relative_url }}">{{ e.title }}</a></h3>
+    <p class="text-sm text-muted leading-relaxed font-light mb-6">{{ e.resumen }}</p>
+    {%- if e.etiquetas %}
+    <div class="flex flex-wrap gap-2 mb-8">{% for t in e.etiquetas %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+    {%- endif %}
+    <div class="mt-auto pt-5 border-t hairline flex items-center justify-between gap-4">
+      <p class="text-xs text-faint">{{ e.autor }}</p>
+      <a href="{{ e.url | relative_url }}" class="text-xs text-accent ulink tracking-wide shrink-0">Leer →</a>
+    </div>
+  </div>
+</article>

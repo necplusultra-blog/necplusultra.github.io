@@ -1,0 +1,36 @@
+# ============================================================
+#  SESIONES DEL TALLER (reproductor de audio)
+#  Se editan desde Pages CMS → "Taller · audios".
+#  La primera de la lista es la que aparece cargada en el reproductor.
+#  Suba el mp3 de cada sesión en el campo "audio".
+#  Los títulos y descripciones de abajo son de muestra.
+# ============================================================
+episodios:
+  - numero: "1"
+    titulo: Prólogos y método
+    descripcion: Presentación del taller y lectura de los prólogos y epílogos a El Capital.
+    invitados: Taller de lectura · Pablo Jiménez Cea
+    duracion_min: 90
+    audio: ""
+    enlace: ""
+  - numero: "2"
+    titulo: La mercancía
+    descripcion: "Capítulo 1: valor de uso, valor y el doble carácter del trabajo."
+    invitados: Taller de lectura · Pablo Jiménez Cea
+    duracion_min: 90
+    audio: ""
+    enlace: ""
+  - numero: "3"
+    titulo: El carácter fetichista de la mercancía
+    descripcion: "Capítulo 1, apartado 4: la forma social de la dominación abstracta."
+    invitados: Taller de lectura · Pablo Jiménez Cea
+    duracion_min: 90
+    audio: ""
+    enlace: ""
+  - numero: "4"
+    titulo: El proceso de intercambio y el dinero
+    descripcion: "Capítulos 2 y 3: de la forma mercancía a la forma dinero."
+    invitados: Taller de lectura · Pablo Jiménez Cea
+    duracion_min: 90
+    audio: ""
+    enlace: ""

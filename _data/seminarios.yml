@@ -1,0 +1,33 @@
+# ============================================================
+#  SEMINARIOS, LECTURAS COLECTIVAS Y CONVOCATORIAS
+#  Se editan desde Pages CMS → "Seminarios y convocatorias".
+#  Se muestran ordenados por fecha.
+# ============================================================
+actividades:
+  - fecha: 2026-11-12
+    tipo: Lectura colectiva
+    destacar: true
+    titulo: "El Capital, tomo I: la forma mercancía"
+    descripcion: Seis sesiones quincenales dedicadas al primer capítulo y al fetichismo. Lectura lenta, sin requisitos previos.
+    horario: Miércoles · 18:00 h
+    modalidad: Híbrido
+    enlace_texto: Inscribirse
+    enlace: "#contacto"
+  - fecha: 2026-11-27
+    tipo: Seminario abierto
+    destacar: false
+    titulo: Automatización, subjetividad y teoría crítica
+    descripcion: Una jornada para discutir qué transforma la inteligencia artificial en el trabajo, el conocimiento y la experiencia.
+    horario: Viernes · 10:00 h
+    modalidad: En línea
+    enlace_texto: Más información
+    enlace: "#contacto"
+  - fecha: 2027-01-15
+    tipo: Convocatoria
+    destacar: false
+    titulo: "Llamada a textos: «Crisis y forma social»"
+    descripcion: "Recibimos ensayos de 4.000 a 8.000 palabras para un número monográfico. Cierre de recepción: 15 de enero."
+    horario: Fecha límite
+    modalidad: Envío por correo
+    enlace_texto: Ver bases
+    enlace: "#contacto"

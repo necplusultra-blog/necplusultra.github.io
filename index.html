@@ -1,0 +1,325 @@
+---
+layout: default
+---
+{%- assign s = site.data.sitio -%}
+
+<!-- ===================== PORTADA ===================== -->
+<section id="inicio" class="min-h-[100svh] flex items-end">
+  <div class="max-w-page mx-auto w-full px-4 sm:px-8 pt-28 sm:pt-32 pb-16 sm:pb-24">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-7 order-2 lg:order-1">
+        <div class="flex items-center gap-4 mb-10 reveal">
+          <span class="w-10 h-px bg-accent"></span>
+          <p class="kicker">{{ s.hero.antetitulo }}</p>
+        </div>
+        <h1 class="font-serif text-[2.6rem] leading-[1.04] sm:text-6xl xl:text-[4.5rem] tracking-tight text-ink reveal">
+          {{ s.hero.titulo }}<br class="hidden sm:block" />
+          <em class="text-accent">{{ s.hero.titulo_acento }}</em>
+        </h1>
+        <p class="mt-10 text-lg sm:text-xl leading-relaxed text-muted font-light max-w-2xl reveal">{{ s.hero.bajada }}</p>
+        <div class="mt-10 flex flex-wrap gap-4 reveal">
+          {%- if s.hero.boton_principal_texto and s.hero.boton_principal_texto != "" %}
+          <a href="{{ s.hero.boton_principal_enlace }}" class="group inline-flex items-center gap-3 bg-accent text-white px-7 py-4 text-sm tracking-wide hover:opacity-90 transition">
+            {{ s.hero.boton_principal_texto }}
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          {%- endif %}
+          {%- if s.hero.boton_secundario_texto and s.hero.boton_secundario_texto != "" %}
+          <a href="{{ s.hero.boton_secundario_enlace }}" class="inline-flex items-center gap-3 border hairline text-ink px-7 py-4 text-sm tracking-wide hover:border-accent hover:text-accent transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            {{ s.hero.boton_secundario_texto }}
+          </a>
+          {%- endif %}
+        </div>
+      </div>
+
+      <figure class="lg:col-span-5 order-1 lg:order-2 w-56 sm:w-72 lg:w-full max-w-md mx-auto lg:mr-0">
+        {% include emblema.html %}
+        {%- if s.hero.pie_imagen and s.hero.pie_imagen != "" %}
+        <figcaption class="hidden lg:block kicker text-center mt-4">{{ s.hero.pie_imagen }}</figcaption>
+        {%- endif %}
+      </figure>
+    </div>
+
+    {%- if s.hero.cifras and s.hero.cifras.size > 0 %}
+    <div class="mt-16 sm:mt-24 rule"></div>
+    <div class="pt-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-faint reveal">
+      {%- for c in s.hero.cifras %}
+      <p><span class="text-ink font-serif text-2xl block mb-1">{{ c.numero }}</span>{{ c.texto }}</p>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<!-- ===================== MANIFIESTO ===================== -->
+{%- if s.manifiesto.mostrar %}
+<section id="manifiesto" class="py-24 sm:py-36 border-t hairline">
+  <div class="max-w-page mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-4 reveal">
+      <p class="kicker mb-5">{{ s.manifiesto.antetitulo }}</p>
+      <h2 class="font-serif text-4xl sm:text-5xl leading-tight text-ink">
+        {{ s.manifiesto.titulo }} <em class="text-accent">{{ s.manifiesto.titulo_acento }}</em>
+      </h2>
+    </div>
+
+    <div class="lg:col-span-7 lg:col-start-6 space-y-8 text-[1.05rem] sm:text-lg leading-[1.85] text-muted font-light">
+      <div class="texto-rico drop reveal">{{ s.manifiesto.cuerpo | markdownify }}</div>
+      {%- if s.manifiesto.cita and s.manifiesto.cita != "" %}
+      <blockquote class="border-l-2 border-accent pl-6 py-2 font-serif italic text-2xl sm:text-[1.7rem] leading-snug text-ink reveal">{{ s.manifiesto.cita }}{% if s.manifiesto.cita_autor and s.manifiesto.cita_autor != "" %}<footer class="mt-4 font-sans not-italic text-xs tracking-[0.18em] uppercase text-faint">{{ s.manifiesto.cita_autor }}</footer>{% endif %}</blockquote>
+      {%- endif %}
+      <div class="texto-rico reveal">{{ s.manifiesto.cuerpo_final | markdownify }}</div>
+
+      {%- if s.manifiesto.ejes and s.manifiesto.ejes.size > 0 %}
+      <div class="grid sm:grid-cols-3 gap-px bg-line border hairline mt-12 reveal">
+        {%- for eje in s.manifiesto.ejes %}
+        <div class="bg-bg p-6">
+          <p class="font-serif text-accent text-lg mb-2">{{ eje.titulo }}</p>
+          <p class="text-sm leading-relaxed">{{ eje.texto }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+
+      {%- if s.simbolo.texto and s.simbolo.texto != "" %}
+      <aside class="grid grid-cols-[5.5rem_1fr] sm:grid-cols-[8rem_1fr] gap-6 items-start pt-10 mt-4 border-t hairline reveal">
+        <div class="opacity-90">{% include emblema.html %}</div>
+        <div>
+          <p class="kicker mb-3">{{ s.simbolo.titulo }}</p>
+          <div class="texto-rico text-sm sm:text-[0.95rem] leading-relaxed">{{ s.simbolo.texto | markdownify }}</div>
+        </div>
+      </aside>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<!-- ===================== ENSAYOS ===================== -->
+{%- assign ensayos = site.ensayos | sort: 'date' | reverse -%}
+{%- assign destacados = ensayos | where: 'destacado', true -%}
+{%- assign destacado = destacados | first -%}
+<section id="ensayos" class="py-24 sm:py-36 border-t hairline bg-tinte" data-filtrable>
+  <div class="max-w-page mx-auto px-4 sm:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 reveal">
+      <div class="shrink-0">
+        <p class="kicker mb-5">{{ s.ensayos.antetitulo }}</p>
+        <h2 class="font-serif text-4xl sm:text-5xl text-ink">{{ s.ensayos.titulo }}</h2>
+      </div>
+      <div class="lg:max-w-2xl lg:justify-end">{% include filtros.html %}</div>
+    </div>
+
+    {%- if destacado %}
+    <article class="card group grid lg:grid-cols-12 mb-8 reveal" data-tags="{{ destacado.etiquetas | join: '|' | escape }}">
+      <a href="{{ destacado.url | relative_url }}" class="lg:col-span-5 relative min-h-[240px] overflow-hidden bg-surface2 border-b lg:border-b-0 lg:border-r hairline block">
+        {%- if destacado.imagen and destacado.imagen != "" %}
+        <img src="{{ destacado.imagen | relative_url }}" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        {%- else %}
+        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="none" style="stroke: var(--line)" stroke-width="1">
+            <circle cx="200" cy="150" r="40"/><circle cx="200" cy="150" r="80"/><circle cx="200" cy="150" r="120"/><circle cx="200" cy="150" r="160"/><circle cx="200" cy="150" r="200"/>
+          </g>
+          <circle cx="200" cy="150" r="80" fill="none" style="stroke: var(--accent)" stroke-width="1.2" stroke-dasharray="4 6"/>
+          <polyline points="200,0 194,60 206,110 196,170 204,230 200,300" fill="none" style="stroke: var(--accent)" stroke-width="1.2"/>
+        </svg>
+        {%- endif %}
+        <span class="absolute top-6 left-6 kicker !text-accent bg-velo px-2 py-1">Destacado</span>
+      </a>
+      <div class="lg:col-span-7 p-7 sm:p-12 flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">{% for t in destacado.etiquetas %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+        <h3 class="card-title font-serif text-3xl sm:text-4xl leading-tight text-ink mb-5"><a href="{{ destacado.url | relative_url }}">{{ destacado.title }}</a></h3>
+        <p class="text-muted leading-relaxed mb-8 font-light">{{ destacado.resumen }}</p>
+        <div class="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6 border-t hairline">
+          <p class="text-xs text-faint">Por <span class="text-ink">{{ destacado.autor }}</span> · {% include fecha.html fecha=destacado.date %}{% if destacado.tiempo_lectura and destacado.tiempo_lectura != "" %} · {{ destacado.tiempo_lectura }}{% endif %}</p>
+          <a href="{{ destacado.url | relative_url }}" class="inline-flex items-center gap-2 text-sm text-accent ulink">Leer ensayo →</a>
+        </div>
+      </div>
+    </article>
+    {%- endif %}
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {%- assign mostrados = 0 -%}
+      {%- assign limite = s.ensayos.cantidad_portada | default: 6 -%}
+      {%- for e in ensayos -%}
+        {%- if destacado and e.url == destacado.url -%}{%- continue -%}{%- endif -%}
+        {%- if mostrados >= limite -%}{%- break -%}{%- endif -%}
+        {% include tarjeta-ensayo.html e=e %}
+        {%- assign mostrados = mostrados | plus: 1 -%}
+      {%- endfor %}
+    </div>
+    <p class="sin-resultados hidden text-center text-muted font-light py-10">No hay ensayos con esta etiqueta en la portada. <a class="text-accent ulink" href="{{ '/ensayos/' | relative_url }}">Buscar en el archivo →</a></p>
+
+    <div class="mt-14 text-center reveal">
+      <a href="{{ '/ensayos/' | relative_url }}" class="inline-flex items-center gap-3 border hairline px-7 py-4 text-sm text-ink hover:border-accent hover:text-accent transition">{{ s.ensayos.boton_archivo }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIBROS ===================== -->
+{%- assign libros = site.libros | sort: 'orden' -%}
+{%- if libros.size > 0 and s.libros.mostrar %}
+<section id="libros" class="py-24 sm:py-36 border-t hairline">
+  <div class="max-w-page mx-auto px-4 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 mb-14">
+      <div class="lg:col-span-5 reveal">
+        <p class="kicker mb-5">{{ s.libros.antetitulo }}</p>
+        <h2 class="font-serif text-4xl sm:text-5xl leading-tight text-ink">{{ s.libros.titulo }} <em class="text-accent">{{ s.libros.titulo_acento }}</em></h2>
+      </div>
+      <p class="lg:col-span-6 lg:col-start-7 text-muted leading-relaxed font-light self-end reveal">{{ s.libros.bajada }}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 lg:gap-12">
+      {%- for l in libros %}
+      <article class="group reveal">
+        <a href="{{ l.url | relative_url }}" class="block transition-transform duration-500 group-hover:-translate-y-1">{% include portada-libro.html l=l %}</a>
+        <div class="pt-6">
+          {%- if l.estado and l.estado != "" %}<span class="tag tag-acento">{{ l.estado }}</span>{% endif %}
+          <h3 class="font-serif text-2xl leading-snug text-ink mt-4 group-hover:text-accent transition"><a href="{{ l.url | relative_url }}">{{ l.title }}</a></h3>
+          <p class="text-xs text-faint mt-2">{{ l.autores }}{% if l.editorial and l.editorial != "" %} · {{ l.editorial }}{% endif %}{% if l.anio and l.anio != "" %} · {{ l.anio }}{% endif %}</p>
+          <p class="text-sm text-muted font-light leading-relaxed mt-4">{{ l.resumen }}</p>
+          <a href="{{ l.url | relative_url }}" class="inline-block mt-5 text-xs text-accent ulink tracking-wide">Ver libro →</a>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<!-- ===================== PODCAST ===================== -->
+{%- assign episodios = site.data.podcast.episodios -%}
+{%- assign ep0 = episodios | first -%}
+{%- if s.podcast.mostrar %}
+<section id="podcast" class="py-24 sm:py-36 border-t hairline bg-tinte">
+  <div class="max-w-page mx-auto px-4 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5 reveal">
+      <p class="kicker mb-5">{{ s.podcast.antetitulo }}</p>
+      <h2 class="font-serif text-4xl sm:text-5xl leading-tight text-ink mb-6">{{ s.podcast.titulo }} <em class="text-accent">{{ s.podcast.titulo_acento }}</em></h2>
+      <p class="text-muted leading-relaxed font-light mb-10">{{ s.podcast.bajada }}</p>
+
+      {%- if ep0 %}
+      <div id="player" class="card !transform-none p-6 sm:p-7">
+        <div class="flex items-start gap-5">
+          <div class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 bg-surface2 border hairline grid place-items-center relative overflow-hidden">
+            {%- if s.podcast.portada and s.podcast.portada != "" %}
+            <img src="{{ s.podcast.portada | relative_url }}" alt="" class="absolute inset-0 w-full h-full object-cover" />
+            {%- else %}
+            <span class="font-serif italic text-accent text-3xl">ci</span>
+            {%- endif %}
+            <span class="absolute bottom-2 left-2 eq flex items-end h-4"><span></span><span></span><span></span><span></span></span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <p class="kicker !text-accent mb-2" id="pEp">{{ s.podcast.etiqueta_episodio | default: "Episodio" }} {{ ep0.numero }}</p>
+            <p class="font-serif text-xl text-ink leading-snug" id="pTitle">{{ ep0.titulo }}</p>
+            <p class="text-xs text-faint mt-2" id="pGuests">{{ ep0.invitados }}</p>
+          </div>
+        </div>
+        <div class="mt-7">
+          <div class="progress" id="progress"><span id="progressBar"></span></div>
+          <div class="flex justify-between text-[11px] text-faint mt-2 tabular-nums"><span id="tCur">00:00</span><span id="tDur">00:00</span></div>
+        </div>
+        <div class="flex items-center justify-between mt-5">
+          <button id="back" type="button" class="text-muted hover:text-ink text-xs tabular-nums" aria-label="Retroceder 15 segundos">−15s</button>
+          <button id="playBtn" type="button" class="w-14 h-14 rounded-full bg-accent text-white grid place-items-center hover:opacity-90 transition" aria-label="Reproducir">
+            <svg id="iPlay" class="w-5 h-5 ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="iPause" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+          </button>
+          <button id="fwd" type="button" class="text-muted hover:text-ink text-xs tabular-nums" aria-label="Adelantar 30 segundos">+30s</button>
+        </div>
+      </div>
+      {%- endif %}
+
+      {%- if s.podcast.plataformas and s.podcast.plataformas.size > 0 %}
+      <div class="flex flex-wrap gap-3 mt-6">
+        {%- for p in s.podcast.plataformas %}
+        <a href="{{ p.enlace }}" class="inline-flex items-center gap-2 border hairline px-4 py-2.5 text-xs text-muted hover:text-ink hover:border-accent transition" {% unless p.enlace contains '#' %}target="_blank" rel="noopener"{% endunless %}>
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>{{ p.nombre }}
+        </a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+
+    <div class="lg:col-span-6 lg:col-start-7 reveal">
+      <div class="flex items-center justify-between mb-4">
+        <p class="kicker">{{ s.podcast.lista_titulo | default: "Episodios" }}</p>
+        <p class="text-xs text-faint">Pulsa para reproducir</p>
+      </div>
+      <ol class="border-t hairline">
+        {%- for ep in episodios %}
+        <li><button type="button" class="ep w-full text-left py-6 border-b hairline grid grid-cols-[2.5rem_1fr_auto] sm:grid-cols-[3rem_1fr_auto] gap-4 items-baseline group"
+          data-ep="{{ s.podcast.etiqueta_episodio | default: "Episodio" }} {{ ep.numero | escape }}" data-title="{{ ep.titulo | escape }}" data-guests="{{ ep.invitados | escape }}"
+          data-dur="{{ ep.duracion_min | default: 60 | times: 60 }}"{% if ep.audio and ep.audio != "" %} data-audio="{{ ep.audio | relative_url }}"{% endif %}>
+          <span class="font-serif text-faint group-hover:text-accent transition">{{ ep.numero }}</span>
+          <span><span class="block font-serif text-xl text-ink group-hover:text-accent transition">{{ ep.titulo }}</span><span class="block text-xs text-faint mt-1.5">{{ ep.descripcion }}</span></span>
+          <span class="text-xs text-faint tabular-nums whitespace-nowrap">{{ ep.duracion_min }} min</span>
+        </button></li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<!-- ===================== SEMINARIOS ===================== -->
+{%- assign actividades = site.data.seminarios.actividades | sort: 'fecha' -%}
+{%- assign meses = "Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic" | split: "," -%}
+{%- if s.seminarios.mostrar %}
+<section id="seminarios" class="py-24 sm:py-36 border-t hairline">
+  <div class="max-w-page mx-auto px-4 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 mb-14">
+      <div class="lg:col-span-5 reveal">
+        <p class="kicker mb-5">{{ s.seminarios.antetitulo }}</p>
+        <h2 class="font-serif text-4xl sm:text-5xl leading-tight text-ink">{{ s.seminarios.titulo }} <em class="text-accent">{{ s.seminarios.titulo_acento }}</em></h2>
+      </div>
+      <p class="lg:col-span-6 lg:col-start-7 text-muted leading-relaxed font-light self-end reveal">{{ s.seminarios.bajada }}</p>
+    </div>
+
+    <div class="border-t hairline">
+      {%- for a in actividades %}
+      {%- assign mi = a.fecha | date: "%-m" | minus: 1 %}
+      <article class="grid md:grid-cols-12 gap-4 md:gap-8 py-9 border-b hairline group reveal">
+        <div class="md:col-span-2">
+          <p class="font-serif text-4xl text-ink leading-none">{{ a.fecha | date: "%-d" }}</p>
+          <p class="kicker mt-2">{{ meses[mi] }} {{ a.fecha | date: "%Y" }}</p>
+        </div>
+        <div class="md:col-span-7">
+          <span class="tag mb-4 inline-block{% if a.destacar %} tag-acento{% endif %}">{{ a.tipo }}</span>
+          <h3 class="font-serif text-2xl sm:text-3xl text-ink group-hover:text-accent transition mb-3">{{ a.titulo }}</h3>
+          <p class="text-sm text-muted leading-relaxed font-light">{{ a.descripcion }}</p>
+        </div>
+        <div class="md:col-span-3 md:text-right flex md:flex-col md:items-end justify-between gap-3">
+          <p class="text-xs text-faint">{{ a.horario }}<br />{{ a.modalidad }}</p>
+          {%- if a.enlace and a.enlace != "" %}
+          <a href="{{ a.enlace }}" class="text-sm text-accent ulink" {% unless a.enlace contains '#' %}target="_blank" rel="noopener"{% endunless %}>{{ a.enlace_texto | default: "Más información" }} →</a>
+          {%- endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+
+    {%- if s.boletin.mostrar %}
+    <div class="mt-20 card !transform-none p-8 sm:p-12 grid md:grid-cols-2 gap-8 items-center reveal">
+      <div>
+        <h3 class="font-serif text-3xl text-ink mb-3">{{ s.boletin.titulo }}</h3>
+        <p class="text-sm text-muted font-light leading-relaxed">{{ s.boletin.texto }}</p>
+      </div>
+      {%- if s.boletin.enlace and s.boletin.enlace != "" %}
+      <div class="md:text-right">
+        <a href="{{ s.boletin.enlace }}" target="_blank" rel="noopener" class="inline-block bg-accent text-white px-7 py-4 text-sm tracking-wide hover:opacity-90 transition">{{ s.boletin.boton }}</a>
+      </div>
+      {%- else %}
+      <div>
+        <form id="newsletter" class="flex flex-col sm:flex-row gap-3" novalidate>
+          <label for="email" class="sr-only">Correo electrónico</label>
+          <input id="email" type="email" required placeholder="tu@correo.org" class="flex-1 min-w-0 bg-transparent border hairline px-5 py-4 text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition" />
+          <button type="submit" class="bg-accent text-white px-7 py-4 text-sm tracking-wide hover:opacity-90 transition">{{ s.boletin.boton }}</button>
+        </form>
+        <p id="nlMsg" class="text-xs text-faint mt-3 hidden" role="status"></p>
+      </div>
+      {%- endif %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}
