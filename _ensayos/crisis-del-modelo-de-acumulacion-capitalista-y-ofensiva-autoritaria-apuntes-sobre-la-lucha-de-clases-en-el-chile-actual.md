@@ -1,19 +1,19 @@
 ---
-title: "Crisis del modelo de acumulación capitalista y ofensiva autoritaria: apuntes sobre la lucha de clases en el Chile actual"
+title: "Crisis del modelo de acumulación capitalista y ofensiva autoritaria:
+  apuntes sobre la lucha de clases en el Chile actual"
 autor: Pablo Jiménez Cea
 date: 2026-06-13
 etiquetas:
   - Crítica de la economía política
   - Capitalismo contemporáneo
   - Nuevos fascismos
-resumen: "La lucha de clases en Chile, como en todas partes del mundo hoy, se desarrolla siempre mediada por las formas y relaciones sociales capitalistas. Este es también el terreno de la ofensiva burguesa actual emprendida por el gobierno de Kast —amparado, por…"
+resumen: La lucha de clases en Chile, como en todas partes del mundo hoy, se
+  desarrolla siempre mediada por las formas y relaciones sociales capitalistas.
+  Este es también el terreno de la ofensiva burguesa actual emprendida por el
+  gobierno de Kast —amparado, por…
 tiempo_lectura: 11 min
 destacado: true
-imagen: ""
-pdf: ""
-# Imagen original en el blog: axxxx.jpeg
 ---
-
 La lucha de clases en Chile, como en todas partes del mundo hoy, se desarrolla siempre mediada por las formas y relaciones sociales capitalistas. Este es también el terreno de la ofensiva burguesa actual emprendida por el gobierno de Kast —amparado, por cierto, también en las leyes represivas heredadas por el gobierno post-revuelta de Boric[1]—. El objetivo de los recortes en «gastos sociales» es aumentar al máximo el grado de explotación de la clase trabajadora disminuyendo el costo de la fuerza de trabajo para el capital. En efecto, el presupuesto de salud, educación, seguridad social, etc., todos estos servicios públicos que entran en la reproducción de la fuerza de trabajo, son financiados con el excedente de trabajo que el conjunto de los capitales arranca a la clase trabajadora.
 
 El objetivo es, entonces, aumentar la masa global de plusvalor o trabajo excedente de la clase trabajadora apropiado por el capital disminuyendo coercitivamente el valor de la fuerza de trabajo (que incluye los servicios sociales que entran en su reproducción). Si el Estado deja de desviar una parte del plusvalor que se apropia hacia educación, salud, etc., se transfiere ese costo a la clase trabajadora y, de esta manera, aumentan las ganancias y la concentración de determinados capitales. Sin embargo, esto no quiere decir que realmente vaya a funcionar incluso en términos capitalistas. Después de todo, la clase trabajadora compra con sus salarios las mercancías producidas por los diferentes capitales. Si se recorta al máximo el gasto social y se empuja a una situación de miseria a la clase obrera, eso redunda en una baja del consumo y, por lo tanto, en una pérdida para los capitales. Menos empresas invertirán en el país ante la falta de perspectivas de consumo, etc. Entendiendo esto cabe preguntarse por qué, de todas maneras, la burguesía nacional emprende este camino que socava las condiciones mismas de la acumulación capitalista.
@@ -57,6 +57,6 @@ El comunimo es el resultado posible de la lucha de clases del proletariado en cu
 [3] Véase: Dyer-Witheford, Nick, Atle Mikkola Kjøsen y James Steinhoff (2024). *Poder inhumano. Inteligencia Artificial y el futuro del capitalismo*. Buenos Aires: Prometeo Editorial.
 
 [4] Esto según los datos del economista Sergio Urzúa recogidos en una entrevista al medio reaccionario Ex-Ante:
-<https://www.ex-ante.cl/sergio-urzua-y-crimen-organizado-chile-tiene-que-batallar-contra-un-poder-economico-significativo/>
+[https://www.ex-ante.cl/sergio-urzua-y-crimen-organizado-chile-tiene-que-batallar-contra-un-poder-economico-significativo/](https://www.ex-ante.cl/sergio-urzua-y-crimen-organizado-chile-tiene-que-batallar-contra-un-poder-economico-significativo/)
 
 [5] Un ejemplo actual de aquello es el [estallido de violencia antiinmigrante en Belfast](https://elpais.com/internacional/2026-06-10/la-llamada-a-la-calma-de-los-politicos-no-logra-frenar-una-noche-de-violencia-contra-los-inmigrantes-en-belfast.html) (Irlanda del norte), hordas de grupos de ultraderecha llevan días incendiando viviendas y autos de población migrante y racializada en el país. Acciones que recientemente han sido respondidas por organizaciones de izquierda en protección de la población racializada.
