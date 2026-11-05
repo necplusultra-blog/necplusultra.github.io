@@ -206,6 +206,51 @@
     }
   });
 
+
+  /* ---------- Estadísticas privadas (GoatCounter) ----------
+     Las visitas a cada página se cuentan solas como "lecturas".
+     Además se registran: descargas, PDF de ensayos y lecturas completas.
+     Nada de esto se muestra en el sitio: solo en el panel privado. */
+  var registrar = function (path, title) {
+    var intento = 0;
+    (function enviar() {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: path, title: title || path, event: true });
+      } else if (intento++ < 20) { setTimeout(enviar, 500); }
+    })();
+  };
+  var ruta = location.pathname.replace(/\/+$/, '').split('/').pop() || 'inicio';
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-descarga]');
+    if (a) registrar('descarga/' + (a.getAttribute('href') || '').split('/').pop(), 'Descarga: ' + a.getAttribute('data-descarga'));
+  });
+
+  document.querySelectorAll('[data-imprimir]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      registrar('pdf/' + ruta, 'PDF: ' + b.getAttribute('data-imprimir'));
+      window.print();
+    });
+  });
+
+  var prosa = document.querySelector('.prosa');
+  if (prosa && 'IntersectionObserver' in window) {
+    var fin = document.createElement('span'); fin.setAttribute('aria-hidden', 'true');
+    var ultimo = prosa.querySelector('.notas-sep') || null;
+    if (ultimo) prosa.insertBefore(fin, ultimo); else prosa.appendChild(fin);
+    var inicio = Date.now(), contado = false;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        // cuenta como lectura completa si llega al final tras al menos 1 minuto en la página
+        if (en.isIntersecting && !contado && Date.now() - inicio > 60000) {
+          contado = true; obs.disconnect();
+          registrar('lectura-completa/' + ruta, 'Lectura completa: ' + document.title.split(' — ')[0]);
+        }
+      });
+    });
+    obs.observe(fin);
+  }
+
   /* ---------- Boletín (demostración) ---------- */
   var form = $('newsletter'), msg = $('nlMsg');
   if (form && msg) {

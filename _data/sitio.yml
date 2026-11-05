@@ -14,6 +14,11 @@ descripcion: "Nec plus ultra: elementos teóricos para la transformación social
 # Si lo deja vacío, no se muestra ningún correo.
 correo: ""
 
+# Estadísticas privadas (GoatCounter). Escriba aquí solo el código de su cuenta,
+# por ejemplo "necplusultra" si su panel es necplusultra.goatcounter.com.
+# Si lo deja vacío, el sitio no registra estadísticas.
+estadisticas: ""
+
 navegacion:
   - texto: Presentación
     enlace: "#manifiesto"
@@ -37,8 +42,8 @@ hero:
   boton_secundario_texto: Escuchar el taller
   boton_secundario_enlace: "#podcast"
   # Si sube una imagen aquí, reemplaza al símbolo dibujado.
-  imagen: ""
-  pie_imagen: La totalidad fisurada y lo no idéntico
+  imagen: /assets/img/necplusultra-simbolo.jpg
+  pie_imagen: "Francis Bacon, Instauratio Magna (1620): la nave cruza las columnas de Hércules"
   cifras:
     - numero: "6"
       texto: ensayos publicados
@@ -73,11 +78,11 @@ manifiesto:
 
 # ---------------- Sobre el símbolo ----------------
 simbolo:
-  titulo: Sobre el símbolo
+  titulo: Sobre la imagen
   texto: |
-    El círculo figura la totalidad social, que se presenta como cerrada, natural y sin afuera; para Adorno, el todo es lo no verdadero. La grieta es la crítica inmanente: no golpea desde fuera, sino que sigue la fisura que el propio orden lleva dentro, la vida dañada.
+    Las columnas de Hércules, en el estrecho de Gibraltar, señalaban el límite del mundo conocido; la tradición les atribuyó la inscripción *Nec plus ultra*: no hay nada más allá. En la portada de la *Instauratio Magna* (1620), Francis Bacon puso una nave que las atraviesa hacia mar abierto, con la leyenda *Multi pertransibunt & augebitur scientia*: muchos pasarán, y el saber aumentará.
 
-    El fragmento que se desprende es lo no idéntico: aquello que el concepto no logra subsumir y que ya no vuelve a encajar. No hay síntesis que cierre el círculo ni imagen positiva de lo que vendría. Queda el hueco, y la luz que entra por él: la posibilidad de otra forma de vida solo se muestra negativamente, en lo que el orden existente no consigue contener.
+    El límite deja de ser una prohibición y se vuelve un umbral. Pensar los límites inmanentes del capital es, también, preguntar por lo que podría existir más allá de ellos.
 
 # ---------------- Ensayos ----------------
 ensayos:
@@ -140,4 +145,6 @@ pie:
   licencia_nombre: CC BY-NC-SA 4.0
   licencia_enlace: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
   licencia_nota: Copia, comparte y transforma citando la fuente.
-  redes: []
+  redes:
+    - nombre: Instagram
+      enlace: https://www.instagram.com/necplusultra__/

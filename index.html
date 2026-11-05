@@ -168,16 +168,25 @@ layout: default
       <p class="lg:col-span-6 lg:col-start-7 text-muted leading-relaxed font-light self-end reveal">{{ s.libros.bajada }}</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 lg:gap-12">
+    <div class="space-y-16 sm:space-y-24">
       {%- for l in libros %}
-      <article class="group reveal">
-        <a href="{{ l.url | relative_url }}" class="block transition-transform duration-500 group-hover:-translate-y-1">{% include portada-libro.html l=l %}</a>
-        <div class="pt-6">
+      <article class="grid md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center reveal">
+        <a href="{{ l.url | relative_url }}" class="md:col-span-5 lg:col-span-4 block max-w-xs mx-auto md:max-w-none w-full libro-portada">{% include portada-libro.html l=l %}</a>
+        <div class="md:col-span-7 lg:col-span-7 lg:col-start-6">
           {%- if l.estado and l.estado != "" %}<span class="tag tag-acento">{{ l.estado }}</span>{% endif %}
-          <h3 class="font-serif text-2xl leading-snug text-ink mt-4 group-hover:text-accent transition"><a href="{{ l.url | relative_url }}">{{ l.title }}</a></h3>
-          <p class="text-xs text-faint mt-2">{{ l.autores }}{% if l.editorial and l.editorial != "" %} · {{ l.editorial }}{% endif %}{% if l.anio and l.anio != "" %} · {{ l.anio }}{% endif %}</p>
-          <p class="text-sm text-muted font-light leading-relaxed mt-4">{{ l.resumen }}</p>
-          <a href="{{ l.url | relative_url }}" class="inline-block mt-5 text-xs text-accent ulink tracking-wide">Ver libro →</a>
+          <h3 class="font-serif text-3xl sm:text-5xl leading-[1.08] text-ink mt-5"><a href="{{ l.url | relative_url }}" class="hover:text-accent transition">{{ l.title }}</a></h3>
+          {%- if l.subtitulo and l.subtitulo != "" %}<p class="font-serif italic text-lg sm:text-xl text-muted leading-snug mt-4">{{ l.subtitulo }}</p>{% endif %}
+          <p class="text-xs text-faint mt-5">{{ l.autores }}{% if l.editorial and l.editorial != "" %} · {{ l.editorial }}{% endif %}{% if l.anio and l.anio != "" %} · {{ l.anio }}{% endif %}</p>
+          <p class="text-muted font-light leading-relaxed mt-6 max-w-xl">{{ l.resumen }}</p>
+          <div class="flex flex-wrap items-center gap-4 mt-9">
+            {%- if l.pdf and l.pdf != "" %}
+            <a href="{{ l.pdf | relative_url }}" download data-descarga="{{ l.title | escape }}" class="group inline-flex items-center gap-3 bg-accent text-white px-7 py-4 text-sm tracking-wide hover:opacity-90 transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg>
+              Descargar libro (PDF)
+            </a>
+            {%- endif %}
+            <a href="{{ l.url | relative_url }}" class="text-sm text-accent ulink">Índice y presentación →</a>
+          </div>
         </div>
       </article>
       {%- endfor %}

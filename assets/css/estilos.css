@@ -199,3 +199,38 @@ button.tag.is-active { color: var(--ink); border-color: var(--accent); backgroun
 .prosa [id^="ref-"] { scroll-margin-top: 7rem; }
 .prosa .notas-sep { margin-top: 3.5em; }
 .prosa .nota:target, .prosa [id^="ref-"]:target { color: var(--ink); }
+
+/* ---------- Imagen emblema (grabado) ---------- */
+.grabado {
+  -webkit-mask-image: radial-gradient(ellipse 70% 68% at 50% 50%, #000 52%, transparent 98%);
+          mask-image: radial-gradient(ellipse 70% 68% at 50% 50%, #000 52%, transparent 98%);
+  filter: sepia(.3);
+  mix-blend-mode: multiply;
+  animation: emerger 2.4s .2s cubic-bezier(.2,.7,.2,1) both;
+}
+:root.dark .grabado {
+  filter: invert(1) sepia(.3) brightness(.88);
+  mix-blend-mode: screen;
+}
+@keyframes emerger { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+
+/* Portada del libro */
+.libro-portada img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.libro-portada:hover img { transform: translateY(-6px) rotate(-.4deg); }
+
+/* ---------- Versión para imprimir / guardar como PDF ---------- */
+@media print {
+  :root, :root.dark {
+    --bg: #fff; --surface: #fff; --surface-2: #fff; --ink: #111; --muted: #222; --faint: #555;
+    --line: #ccc; --accent: #8a1f1f; --accent-soft: transparent; color-scheme: light;
+  }
+  body { background: #fff !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  body::before, #siteHeader, #contacto, .no-print, .bg-tinte, article > header > a.kicker { display: none !important; }
+  article > header { text-align: left !important; }
+  article { padding-top: 0 !important; }
+  .prosa { font-size: 11pt; line-height: 1.6; max-width: none; }
+  .prosa a { color: inherit; text-decoration: none; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  h1 { font-size: 24pt !important; }
+}

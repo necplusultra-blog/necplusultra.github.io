@@ -11,6 +11,13 @@ layout: default
       <div class="lg:col-span-7 lg:col-start-6">
         {%- if page.estado and page.estado != "" %}<span class="tag tag-acento">{{ page.estado }}</span>{% endif %}
         <h1 class="font-serif text-4xl sm:text-5xl leading-[1.08] tracking-tight text-ink mt-6">{{ page.title }}</h1>
+        {%- if page.subtitulo and page.subtitulo != "" %}<p class="font-serif italic text-xl text-muted leading-snug mt-4">{{ page.subtitulo }}</p>{% endif %}
+        {%- if page.pdf and page.pdf != "" %}
+        <a href="{{ page.pdf | relative_url }}" download data-descarga="{{ page.title | escape }}" class="inline-flex items-center gap-3 bg-accent text-white px-7 py-4 text-sm tracking-wide hover:opacity-90 transition mt-8">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg>
+          Descargar libro (PDF)
+        </a>
+        {%- endif %}
         <dl class="mt-8 grid grid-cols-[7rem_1fr] gap-y-3 text-sm border-t hairline pt-6">
           {%- if page.autores and page.autores != "" %}<dt class="text-faint">Autoría</dt><dd class="text-ink">{{ page.autores }}</dd>{% endif %}
           {%- if page.editorial and page.editorial != "" %}<dt class="text-faint">Editorial</dt><dd class="text-ink">{{ page.editorial }}</dd>{% endif %}
@@ -22,7 +29,7 @@ layout: default
         <div class="prosa mt-10">{{ content }}</div>
         <div class="flex flex-wrap gap-4 mt-12">
           {%- if page.pdf and page.pdf != "" %}
-          <a href="{{ page.pdf | relative_url }}" download class="inline-flex items-center gap-3 bg-accent text-white px-6 py-3 text-sm hover:opacity-90 transition">Descargar PDF</a>
+          <a href="{{ page.pdf | relative_url }}" download data-descarga="{{ page.title | escape }}" class="inline-flex items-center gap-3 bg-accent text-white px-6 py-3 text-sm hover:opacity-90 transition">Descargar PDF</a>
           {%- endif %}
           {%- if page.enlace and page.enlace != "" %}
           <a href="{{ page.enlace }}" target="_blank" rel="noopener" class="inline-flex items-center gap-3 border hairline px-6 py-3 text-sm text-ink hover:border-accent hover:text-accent transition">{{ page.enlace_texto | default: "Más información" }} →</a>

@@ -1,0 +1,314 @@
+# Configuración del panel de edición Pages CMS (https://app.pagescms.org)
+# Define qué se puede editar y con qué formulario.
+
+media:
+  input: assets/img
+  output: /assets/img
+
+content:
+  # ---------------------------------------------------------- ENSAYOS
+  - name: ensayos
+    label: Ensayos
+    type: collection
+    path: _ensayos
+    view:
+      fields: [title, autor, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: autor
+        label: Autor o autora
+        type: string
+      - name: date
+        label: Fecha de publicación
+        type: date
+        required: true
+      - name: etiquetas
+        label: Etiquetas
+        type: select
+        options:
+          multiple: true
+          values:
+            - Crítica de la economía política
+            - Psicoanálisis
+            - Capitalismo contemporáneo
+            - Subjetividad
+            - Nuevos fascismos
+            - Teoría crítica de la sociedad
+            - Emancipación social
+      - name: resumen
+        label: Resumen (aparece en la tarjeta)
+        type: text
+      - name: tiempo_lectura
+        label: Tiempo de lectura (ej. "12 min")
+        type: string
+      - name: destacado
+        label: Mostrar como ensayo destacado en la portada
+        type: boolean
+      - name: imagen
+        label: Imagen (opcional)
+        type: image
+      - name: pdf
+        label: PDF descargable (opcional)
+        type: file
+      - name: body
+        label: Texto del ensayo
+        type: rich-text
+
+  # ---------------------------------------------------------- LIBROS
+  - name: libros
+    label: Libros
+    type: collection
+    path: _libros
+    view:
+      fields: [title, estado, orden]
+      primary: title
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: subtitulo
+        label: Subtítulo
+        type: string
+      - name: autores
+        label: Autoría
+        type: string
+      - name: editorial
+        label: Editorial
+        type: string
+      - name: anio
+        label: Año
+        type: string
+      - name: estado
+        label: Estado (ej. En preparación, En prensa, Publicado)
+        type: string
+      - name: orden
+        label: Orden en la portada (1 = primero)
+        type: number
+      - name: resumen
+        label: Resumen breve
+        type: text
+      - name: portada
+        label: Portada (si se deja vacía se genera una tipográfica)
+        type: image
+      - name: pdf
+        label: PDF descargable (opcional)
+        type: file
+      - name: enlace
+        label: Enlace externo (editorial, compra, repositorio)
+        type: string
+      - name: enlace_texto
+        label: Texto del botón del enlace
+        type: string
+      - name: body
+        label: Presentación, índice o reseña
+        type: rich-text
+
+  # ---------------------------------------------------------- TEXTOS DEL SITIO
+  - name: sitio
+    label: Textos del sitio
+    type: file
+    path: _data/sitio.yml
+    fields:
+      - name: nombre
+        label: Nombre (primera palabra)
+        type: string
+      - name: nombre_acento
+        label: Nombre (palabra en cursiva y color)
+        type: string
+      - name: lema
+        label: Lema
+        type: string
+      - name: descripcion
+        label: Descripción para buscadores
+        type: text
+      - name: correo
+        label: Correo de contacto (vacío = no se muestra)
+        type: string
+      - name: estadisticas
+        label: "Estadísticas privadas: código de GoatCounter (ej. necplusultra)"
+        type: string
+      - name: navegacion
+        label: Menú de navegación
+        type: object
+        list: true
+        fields:
+          - { name: texto, label: Texto, type: string }
+          - { name: enlace, label: "Enlace (ej. #ensayos)", type: string }
+
+      - name: hero
+        label: Portada
+        type: object
+        fields:
+          - { name: antetitulo, label: Antetítulo, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: titulo_acento, label: Título (parte destacada), type: string }
+          - { name: bajada, label: Bajada, type: text }
+          - { name: boton_principal_texto, label: Botón principal · texto, type: string }
+          - { name: boton_principal_enlace, label: Botón principal · enlace, type: string }
+          - { name: boton_secundario_texto, label: Botón secundario · texto, type: string }
+          - { name: boton_secundario_enlace, label: Botón secundario · enlace, type: string }
+          - { name: imagen, label: Imagen de portada (grabado), type: image }
+          - { name: pie_imagen, label: Pie de la imagen, type: string }
+          - name: cifras
+            label: Cifras
+            type: object
+            list: true
+            fields:
+              - { name: numero, label: Número, type: string }
+              - { name: texto, label: Texto, type: string }
+
+      - name: manifiesto
+        label: Presentación
+        type: object
+        fields:
+          - { name: mostrar, label: Mostrar esta sección, type: boolean }
+          - { name: antetitulo, label: Antetítulo, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: titulo_acento, label: Título (parte destacada), type: string }
+          - { name: cuerpo, label: Texto principal, type: rich-text }
+          - { name: cita, label: Cita destacada, type: text }
+          - { name: cita_autor, label: Autor y fuente de la cita, type: string }
+          - { name: cuerpo_final, label: Texto final, type: rich-text }
+          - name: ejes
+            label: Ejes
+            type: object
+            list: true
+            fields:
+              - { name: titulo, label: Título, type: string }
+              - { name: texto, label: Texto, type: text }
+
+      - name: simbolo
+        label: Sobre la imagen de portada
+        type: object
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: rich-text }
+
+      - name: ensayos
+        label: Sección Ensayos
+        type: object
+        fields:
+          - { name: antetitulo, label: Antetítulo, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: cantidad_portada, label: Ensayos en la portada (además del destacado), type: number }
+          - { name: boton_archivo, label: Texto del botón del archivo, type: string }
+
+      - name: etiquetas
+        label: Etiquetas (filtros de ensayos)
+        type: string
+        list: true
+
+      - name: libros
+        label: Sección Libros
+        type: object
+        fields:
+          - { name: mostrar, label: Mostrar esta sección, type: boolean }
+          - { name: antetitulo, label: Antetítulo, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: titulo_acento, label: Título (parte destacada), type: string }
+          - { name: bajada, label: Bajada, type: text }
+
+      - name: podcast
+        label: Sección Taller / Podcast
+        type: object
+        fields:
+          - { name: mostrar, label: Mostrar esta sección, type: boolean }
+          - { name: etiqueta_episodio, label: "Nombre de cada audio (ej. Sesión, Episodio)", type: string }
+          - { name: lista_titulo, label: Título de la lista de audios, type: string }
+          - { name: antetitulo, label: Antetítulo, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: titulo_acento, label: Título (parte destacada), type: string }
+          - { name: bajada, label: Bajada, type: text }
+          - { name: portada, label: Portada del taller o podcast, type: image }
+          - name: plataformas
+            label: Plataformas
+            type: object
+            list: true
+            fields:
+              - { name: nombre, label: Nombre, type: string }
+              - { name: enlace, label: Enlace, type: string }
+
+      - name: seminarios
+        label: Sección Seminarios y actividades
+        type: object
+        fields:
+          - { name: mostrar, label: Mostrar esta sección (incluye el boletín), type: boolean }
+          - { name: antetitulo, label: Antetítulo, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: titulo_acento, label: Título (parte destacada), type: string }
+          - { name: bajada, label: Bajada, type: text }
+
+      - name: boletin
+        label: Boletín
+        type: object
+        fields:
+          - { name: mostrar, label: Mostrar el boletín, type: boolean }
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: text }
+          - { name: enlace, label: Enlace al formulario de suscripción, type: string }
+          - { name: boton, label: Texto del botón, type: string }
+
+      - name: pie
+        label: Pie de página
+        type: object
+        fields:
+          - { name: texto, label: Texto, type: text }
+          - { name: licencia_nombre, label: Licencia, type: string }
+          - { name: licencia_enlace, label: Enlace de la licencia, type: string }
+          - { name: licencia_nota, label: Nota de licencia, type: string }
+          - name: redes
+            label: Redes sociales
+            type: object
+            list: true
+            fields:
+              - { name: nombre, label: Nombre, type: string }
+              - { name: enlace, label: Enlace, type: string }
+
+  # ---------------------------------------------------------- PODCAST
+  - name: podcast
+    label: Taller · audios
+    type: file
+    path: _data/podcast.yml
+    fields:
+      - name: episodios
+        label: Sesiones (la primera se carga en el reproductor)
+        type: object
+        list: true
+        fields:
+          - { name: numero, label: Número, type: string }
+          - { name: titulo, label: Título, type: string }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: invitados, label: Participantes, type: string }
+          - { name: duracion_min, label: Duración (minutos), type: number }
+          - { name: audio, label: Archivo de audio (mp3, opcional), type: file }
+          - { name: enlace, label: Enlace externo (opcional), type: string }
+
+  # ---------------------------------------------------------- SEMINARIOS
+  - name: seminarios
+    label: Seminarios y convocatorias
+    type: file
+    path: _data/seminarios.yml
+    fields:
+      - name: actividades
+        label: Actividades
+        type: object
+        list: true
+        fields:
+          - { name: fecha, label: Fecha, type: date }
+          - { name: tipo, label: "Tipo (ej. Lectura colectiva, Convocatoria)", type: string }
+          - { name: destacar, label: Resaltar en color, type: boolean }
+          - { name: titulo, label: Título, type: string }
+          - { name: descripcion, label: Descripción, type: text }
+          - { name: horario, label: Horario, type: string }
+          - { name: modalidad, label: Modalidad, type: string }
+          - { name: enlace_texto, label: Texto del enlace, type: string }
+          - { name: enlace, label: Enlace, type: string }

@@ -28,14 +28,20 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if page.pdf and page.pdf != "" %}
-  <div class="max-w-[44rem] mx-auto px-4 sm:px-8 mt-12">
-    <a href="{{ page.pdf | relative_url }}" class="inline-flex items-center gap-3 border hairline px-6 py-3 text-sm text-ink hover:border-accent hover:text-accent transition" download>
+  <div class="no-print max-w-[44rem] mx-auto px-4 sm:px-8 mt-12 flex flex-wrap gap-4">
+    {%- if page.pdf and page.pdf != "" %}
+    <a href="{{ page.pdf | relative_url }}" download data-descarga="{{ page.title | escape }}" class="inline-flex items-center gap-3 bg-accent text-white px-6 py-3 text-sm hover:opacity-90 transition">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg>
+      Descargar PDF
+    </a>
+    {%- else %}
+    <button type="button" data-imprimir="{{ page.title | escape }}" class="inline-flex items-center gap-3 border hairline px-6 py-3 text-sm text-ink hover:border-accent hover:text-accent transition">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12M6 10l6 6 6-6M4 20h16"/></svg>
       Descargar en PDF
-    </a>
+    </button>
+    {%- endif %}
   </div>
-  {%- endif %}
+
 </article>
 
 {%- assign otros = site.ensayos | sort: 'date' | reverse -%}

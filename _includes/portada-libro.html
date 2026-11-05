@@ -1,14 +1,10 @@
 {%- assign l = include.l -%}
 {%- if l.portada and l.portada != "" -%}
-<img src="{{ l.portada | relative_url }}" alt="Portada de {{ l.title | escape }}" loading="lazy" class="w-full aspect-[2/3] object-cover border hairline" />
+<img src="{{ l.portada | relative_url }}" alt="Portada de {{ l.title | escape }}" loading="lazy" class="w-full h-auto border hairline shadow-[0_30px_60px_-30px_rgba(0,0,0,.7)]" />
 {%- else -%}
 <div class="portada-tipo w-full aspect-[2/3] border hairline bg-surface2 p-6 sm:p-7 flex flex-col">
   <span class="kicker !text-accent">{{ site.data.sitio.nombre }} {{ site.data.sitio.nombre_acento }}</span>
-  <svg class="w-16 h-16 my-auto" viewBox="0 0 64 64" aria-hidden="true">
-    <path d="M36 14.5 A20 20 0 1 1 28 14.5" fill="none" style="stroke: var(--ink)" stroke-opacity=".6" stroke-width="1.6" stroke-linecap="round"/>
-    <polyline points="32,15 30,24 34,31 31,38 33,44" fill="none" style="stroke: var(--accent)" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M27 9.5 A20 20 0 0 1 39 8.5" fill="none" style="stroke: var(--accent)" stroke-width="3"/>
-  </svg>
+  <span class="block w-10 h-px bg-accent my-auto"></span>
   <p class="font-serif text-2xl leading-tight text-ink">{{ l.title }}</p>
   <p class="text-xs text-muted mt-3">{{ l.autores }}</p>
 </div>

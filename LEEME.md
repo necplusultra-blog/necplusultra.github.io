@@ -8,7 +8,7 @@ Sitio estático para GitHub Pages. **Todo lo que está escrito se puede editar**
 
 1. Cree un repositorio nuevo en GitHub (por ejemplo `necplusultra`).
 2. Suba **todo el contenido de esta carpeta** a la raíz del repositorio (botón *Add file → Upload files*, arrastrando todas las carpetas y archivos).
-   - En Mac, el archivo `.pages.yml` está oculto: en el Finder pulse `Cmd + Shift + .` para verlo y poder arrastrarlo. Es el archivo que configura el panel de edición.
+   - **Importante:** el archivo `.pages.yml` (el que configura el panel) suele quedar fuera al arrastrar carpetas. Compruebe que aparezca en el repositorio; si no, súbalo aparte con *Add file → Upload files*.
 3. En el repositorio, vaya a **Settings → Pages**. En *Build and deployment* elija **Deploy from a branch**, rama `main` y carpeta `/ (root)`. Guarde.
 4. En uno o dos minutos el sitio estará en `https://SU-USUARIO.github.io/necplusultra/`.
 
@@ -29,7 +29,7 @@ Cada vez que guarda un cambio, el panel lo registra en GitHub y el sitio se actu
 |---|---|
 | **Ensayos** | Los seis textos recuperados del blog. Cada uno tiene título, autor, fecha, etiquetas, resumen, imagen, PDF y el texto completo. Para **eliminar** uno, ábralo y pulse *Delete*; para crear otro, *Add an entry*. Marque **destacado** en el que quiera ver en grande en la portada. |
 | **Libros** | *Revuelta, capital y praxis social* ya está cargado: suba ahí la **portada** y el **PDF**, y escriba la presentación o el índice. Se pueden agregar más libros. |
-| **Textos del sitio** | Todos los demás textos: nombre, lema, menú, portada, presentación, cita, *Sobre el símbolo*, títulos de sección y pie de página. Cada sección tiene un interruptor **Mostrar** para ocultarla sin borrar su contenido. |
+| **Textos del sitio** | Todos los demás textos: nombre, lema, menú, portada, presentación, cita, *Sobre la imagen*, títulos de sección y pie de página. Cada sección tiene un interruptor **Mostrar** para ocultarla sin borrar su contenido. |
 | **Taller · audios** | Las sesiones del taller de *El Capital*. En cada una, suba el **mp3** en el campo *audio* y el reproductor lo reproducirá. Los títulos actuales son de muestra. |
 | **Seminarios y convocatorias** | Actividades con fecha. La sección está **oculta** por ahora; actívela en *Textos del sitio → Sección Seminarios → Mostrar*. |
 
@@ -43,7 +43,24 @@ Cada vez que guarda un cambio, el panel lo registra en GitHub y el sitio se actu
 
 **Etiquetas:** las siete etiquetas están en `.pages.yml` (lista del campo *Etiquetas*) y en *Textos del sitio → Etiquetas* (que define los botones de filtro). Si quiere añadir o renombrar una, cámbiela en ambos lugares.
 
-## 4. Editar sin el panel
+## 4. Estadísticas privadas (lecturas y descargas)
+
+El sitio puede registrar, sin mostrarlo al público:
+
+- **Lecturas:** cada visita a un ensayo, al libro o a la portada.
+- **Lecturas completas:** cuando alguien llega al final de un ensayo tras al menos un minuto en la página.
+- **Descargas:** cada descarga del PDF del libro y cada «Descargar en PDF» de un ensayo.
+
+Para activarlas:
+
+1. Cree una cuenta gratuita en **https://www.goatcounter.com/signup**. Como código elija, por ejemplo, `necplusultra`: su panel quedará en `necplusultra.goatcounter.com`.
+2. En Pages CMS → *Textos del sitio*, escriba ese código en **Estadísticas privadas** y guarde.
+3. Para ver las cifras, entre a su panel con su usuario y contraseña. Nadie más puede verlo, salvo que usted lo haga público en la configuración de GoatCounter (no lo haga).
+4. Para que sus propias visitas no se cuenten, abra una vez el sitio agregando `#toggle-goatcounter` al final de la dirección, en cada navegador que use.
+
+En el panel, las descargas aparecen como `descarga/...` y `pdf/...`, y las lecturas completas como `lectura-completa/...`.
+
+## 5. Editar sin el panel
 
 Todo el contenido está en archivos de texto legibles, que también se pueden editar en GitHub con el lápiz ✎:
 
@@ -58,8 +75,8 @@ assets/img/            imágenes y PDF
 
 Las plantillas (`_layouts/`, `_includes/`, `index.html`), los estilos (`assets/css/estilos.css`) y el comportamiento (`assets/js/main.js`) solo hace falta tocarlos para cambiar el diseño.
 
-## 5. Antes de presentarlo
+## 6. Antes de presentarlo
 
-- Suba la portada y el PDF del libro, y las imágenes de los ensayos.
+- Suba las imágenes de los ensayos (el libro ya tiene portada y PDF).
 - Reemplace las sesiones de muestra del taller por las reales, con sus audios.
 - Revise las etiquetas asignadas a cada ensayo y el texto de la presentación: son una propuesta.
