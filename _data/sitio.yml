@@ -43,7 +43,7 @@ hero:
   boton_secundario_enlace: "#podcast"
   # Si sube una imagen aquí, reemplaza al símbolo dibujado.
   imagen: /assets/img/necplusultra-emblema.svg
-  pie_imagen: La hoz y el martillo en flor
+  pie_imagen: Hoz, martillo y cortacadenas entre zarzas
   cifras:
     - numero: "6"
       texto: ensayos publicados
@@ -80,9 +80,9 @@ manifiesto:
 simbolo:
   titulo: Sobre el emblema
   texto: |
-    La hoz y el martillo nombran la unión de quienes trabajan la tierra y la fábrica. Aquí aparecen cubiertos por enredaderas en flor: el comunismo no como dominio productivista sobre la naturaleza, sino como reparación de la fractura metabólica que el capital abre entre la sociedad y la tierra.
+    La hoz y el martillo, en hierro gastado, nombran a quienes trabajan la tierra y la fábrica. Sobre ellos se alza la A de la anarquía hecha cortacadenas: una herramienta que no fabrica nada, sino que rompe; su travesaño es la cadena ya cortada. El círculo que la encierra es un anillo de zarzas.
 
-    Marx advertía que la producción capitalista prospera socavando al mismo tiempo las dos fuentes de toda riqueza: la tierra y el trabajador. Liberadas de la valorización, las herramientas del trabajo dejan de servir a la devastación y vuelven a formar parte de un mundo vivo que rebrota.
+    De las espinas brotan rosas oscuras. La emancipación no aparece como dominio productivista sobre la naturaleza, sino como ruptura de las cadenas y reparación de la fractura metabólica que el capital abre entre la sociedad y la tierra: Marx advertía que la producción capitalista socava al mismo tiempo la tierra y al trabajador.
 
 # ---------------- Ensayos ----------------
 ensayos:
