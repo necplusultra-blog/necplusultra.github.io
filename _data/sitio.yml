@@ -1,24 +1,9 @@
-# ============================================================
-#  TEXTOS GENERALES DEL SITIO
-#  Se editan desde Pages CMS → "Textos del sitio",
-#  o directamente aquí. Los campos marcados con "|" admiten
-#  varios párrafos (deje una línea en blanco entre párrafos)
-#  y formato Markdown: *cursiva*, **negrita**, [enlace](https://...).
-#  Cada sección tiene un interruptor "mostrar" para ocultarla.
-# ============================================================
-
 nombre: Nec plus
 nombre_acento: ultra
 lema: Elementos teóricos para la transformación social radical en el s. XXI
-descripcion: "Nec plus ultra: elementos teóricos para la transformación social radical en el s. XXI. Ensayos de Pablo Jiménez Cea sobre la crisis del capitalismo, las nuevas derechas y la emancipación social."
-# Si lo deja vacío, no se muestra ningún correo.
-correo: ""
-
-# Estadísticas privadas (GoatCounter). Escriba aquí solo el código de su cuenta,
-# por ejemplo "necplusultra" si su panel es necplusultra.goatcounter.com.
-# Si lo deja vacío, el sitio no registra estadísticas.
-estadisticas: ""
-
+descripcion: "Nec plus ultra: elementos teóricos para la transformación social
+  radical en el s. XXI. Ensayos de Pablo Jiménez Cea sobre la crisis del
+  capitalismo, las nuevas derechas y la emancipación social."
 navegacion:
   - texto: Presentación
     enlace: "#manifiesto"
@@ -30,20 +15,18 @@ navegacion:
     enlace: "#podcast"
   - texto: Contacto
     enlace: "#contacto"
-
-# ---------------- Portada ----------------
 hero:
   antetitulo: Pablo Jiménez Cea · Ensayos y escritos
   titulo: Elementos teóricos para la transformación social radical
   titulo_acento: en el s. XXI
-  bajada: Ensayos sobre la crisis estructural del capitalismo, las nuevas formas de barbarie y las posibilidades de la emancipación social radical, escritos desde la crítica de la economía política y la teoría crítica de la sociedad.
+  bajada: Ensayos sobre la crisis estructural del capitalismo, las nuevas formas
+    de barbarie y las posibilidades de la emancipación social radical, escritos
+    desde la crítica de la economía política y la teoría crítica de la sociedad.
   boton_principal_texto: Leer los ensayos
   boton_principal_enlace: "#ensayos"
   boton_secundario_texto: Escuchar el taller
   boton_secundario_enlace: "#podcast"
-  # Si sube una imagen aquí, reemplaza al símbolo dibujado.
   imagen: /assets/img/necplusultra-emblema.svg
-  pie_imagen: Cyber Marx
   cifras:
     - numero: "6"
       texto: ensayos publicados
@@ -53,96 +36,87 @@ hero:
       texto: taller de lectura
     - numero: CC
       texto: textos de libre circulación
-
-# ---------------- Presentación ----------------
 manifiesto:
   mostrar: true
   antetitulo: I. Presentación
   titulo: Nec plus ultra,
   titulo_acento: «no más allá».
-  cuerpo: |
-    *Nec plus ultra* era la inscripción que señalaba el límite del mundo conocido. Aquí se la lee a contrapelo: como pregunta por los límites inmanentes del capital y por lo que podría existir más allá de ellos.
+  cuerpo: >-
+    *Nec plus ultra* era la inscripción que señalaba el límite del mundo
+    conocido. Aquí se la lee a contrapelo: como pregunta por los límites
+    inmanentes del capital y por lo que podría existir más allá de ellos.
 
-    Los textos reunidos en este sitio se ocupan de la crisis estructural del capitalismo global, de sus expresiones autoritarias —de la neorreacción y la Ilustración Oscura a la ofensiva burguesa en el Chile actual— y de la pregunta por la transformación social radical después de la revuelta.
-  cita: La crítica despiadada de todo lo existente; despiadada en el sentido de que no teme a sus propios resultados ni al conflicto con los poderes existentes.
+
+    Los textos reunidos en este sitio se ocupan de la crisis estructural del
+    capitalismo global, de sus expresiones autoritarias —de la neorreacción y la
+    Ilustración Oscura a la ofensiva burguesa en el Chile actual— y de la
+    pregunta por la transformación social radical después de la revuelta.
+  cita: La crítica despiadada de todo lo existente; despiadada en el sentido de
+    que no teme a sus propios resultados ni al conflicto con los poderes
+    existentes.
   cita_autor: Karl Marx, carta a Arnold Ruge, 1843
-  cuerpo_final: |
-    Los ensayos proceden del blog **Nec plus ultra** y se complementan con el libro *Revuelta, capital y praxis social* y con las grabaciones del taller de lectura de *El Capital*.
+  cuerpo_final: Los ensayos proceden del blog **Nec plus ultra** y se complementan
+    con el libro *Revuelta, capital y praxis social* y con las grabaciones del
+    taller de lectura de *El Capital*.
   ejes:
     - titulo: Crisis
-      texto: Los límites inmanentes del capital y la crisis estructural del capitalismo tardío.
+      texto: Los límites inmanentes del capital y la crisis estructural del
+        capitalismo tardío.
     - titulo: Barbarie
-      texto: Neorreacción, Ilustración Oscura y ofensiva autoritaria como expresiones de la crisis.
+      texto: Neorreacción, Ilustración Oscura y ofensiva autoritaria como expresiones
+        de la crisis.
     - titulo: Emancipación
-      texto: Revuelta, insurrección y comunización. Las posibilidades de la transformación social radical.
-
-# ---------------- Sobre el símbolo ----------------
+      texto: Revuelta, insurrección y comunización. Las posibilidades de la
+        transformación social radical.
 simbolo:
   titulo: Sobre la imagen
-  texto: |
-    El retrato de Marx con la mirada encendida acompaña a *Nec plus ultra* desde su primera etapa. No es una imagen de culto, sino una provocación: la crítica de la economía política leída desde el presente, con los ojos puestos en las formas actuales de dominación.
-
-# ---------------- Ensayos ----------------
+  texto: "El retrato de Marx con la mirada encendida acompaña a *Nec plus ultra*
+    desde su primera etapa. No es una imagen de culto, sino una provocación: la
+    crítica de la economía política leída desde el presente, con los ojos
+    puestos en las formas actuales de dominación."
 ensayos:
   antetitulo: II. Ensayos
   titulo: Escritos
   cantidad_portada: 6
   boton_archivo: Ver todos los ensayos
-
-# Etiquetas disponibles para clasificar los ensayos.
-# Si agrega una nueva aquí, agréguela también en .pages.yml (campo "etiquetas").
 etiquetas:
   - Crítica de la economía política
-  - Psicoanálisis
   - Capitalismo contemporáneo
   - Subjetividad
   - Nuevos fascismos
-  - Teoría crítica de la sociedad
   - Emancipación social
-
-# ---------------- Libros ----------------
 libros:
   mostrar: true
   antetitulo: III. Libros
   titulo: Libros
   titulo_acento: de descarga libre
-  bajada: Libros publicados, con su presentación, enlace a la editorial y descarga en PDF cuando la edición lo permite.
-
-# ---------------- Taller (reproductor de audio) ----------------
+  bajada: Libros publicados, con su presentación, enlace a la editorial y descarga
+    en PDF cuando la edición lo permite.
 podcast:
-  mostrar: true
+  mostrar: false
+  etiqueta_episodio: Sesión
+  lista_titulo: Sesiones del taller
   antetitulo: IV. Taller
   titulo: Leer
   titulo_acento: El Capital
-  bajada: Grabaciones del taller de lectura de El Capital de Karl Marx, sesión por sesión.
-  etiqueta_episodio: Sesión
-  lista_titulo: Sesiones del taller
-  portada: ""
-  plataformas: []
-
-# ---------------- Seminarios ----------------
+  bajada: Grabaciones del taller de lectura de El Capital de Karl Marx, sesión por
+    sesión.
 seminarios:
   mostrar: false
   antetitulo: V. Actividades
   titulo: Próximas
   titulo_acento: actividades
   bajada: Talleres, presentaciones y seminarios abiertos.
-
-# ---------------- Boletín ----------------
 boletin:
   mostrar: false
   titulo: Suscripción
   texto: Avisos de nuevos ensayos y sesiones del taller.
-  # Pegue aquí el enlace a su formulario de suscripción (Google Forms, Buttondown, etc.).
-  enlace: ""
   boton: Suscribirme
-
-# ---------------- Pie de página ----------------
 pie:
   texto: Elementos teóricos para la transformación social radical en el s. XXI.
   licencia_nombre: CC BY-NC-SA 4.0
   licencia_enlace: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
-  licencia_nota: Copia, comparte y transforma citando la fuente.
+  licencia_nota: "Copia, comparte, transforma. El conocimiento es libre. "
   redes:
     - nombre: Instagram
       enlace: https://www.instagram.com/necplusultra__/
