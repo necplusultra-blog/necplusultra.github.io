@@ -29,7 +29,7 @@ Cada vez que guarda un cambio, el panel lo registra en GitHub y el sitio se actu
 |---|---|
 | **Ensayos** | Los seis textos recuperados del blog. Cada uno tiene título, autor, fecha, etiquetas, resumen, imagen, PDF y el texto completo. Para **eliminar** uno, ábralo y pulse *Delete*; para crear otro, *Add an entry*. Marque **destacado** en el que quiera ver en grande en la portada. |
 | **Libros** | *Revuelta, capital y praxis social* ya está cargado: suba ahí la **portada** y el **PDF**, y escriba la presentación o el índice. Se pueden agregar más libros. |
-| **Textos del sitio** | Todos los demás textos: nombre, lema, menú, portada, presentación, cita, *Sobre el emblema*, títulos de sección y pie de página. Cada sección tiene un interruptor **Mostrar** para ocultarla sin borrar su contenido. |
+| **Textos del sitio** | Todos los demás textos: nombre, lema, menú, portada, presentación, cita, *Sobre la imagen*, títulos de sección y pie de página. Cada sección tiene un interruptor **Mostrar** para ocultarla sin borrar su contenido. |
 | **Taller · audios** | Las sesiones del taller de *El Capital*. En cada una, suba el **mp3** en el campo *audio* y el reproductor lo reproducirá. Los títulos actuales son de muestra. |
 | **Seminarios y convocatorias** | Actividades con fecha. La sección está **oculta** por ahora; actívela en *Textos del sitio → Sección Seminarios → Mostrar*. |
 

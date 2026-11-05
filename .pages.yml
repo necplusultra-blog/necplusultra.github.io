@@ -187,7 +187,7 @@ content:
               - { name: texto, label: Texto, type: text }
 
       - name: simbolo
-        label: Sobre el emblema
+        label: Sobre la imagen
         type: object
         fields:
           - { name: titulo, label: Título, type: string }

@@ -43,7 +43,7 @@ hero:
   boton_secundario_enlace: "#podcast"
   # Si sube una imagen aquí, reemplaza al símbolo dibujado.
   imagen: /assets/img/necplusultra-emblema.svg
-  pie_imagen: Hoz, martillo y cortacadenas entre zarzas
+  pie_imagen: Cyber Marx
   cifras:
     - numero: "6"
       texto: ensayos publicados
@@ -78,11 +78,9 @@ manifiesto:
 
 # ---------------- Sobre el símbolo ----------------
 simbolo:
-  titulo: Sobre el emblema
+  titulo: Sobre la imagen
   texto: |
-    La hoz y el martillo, en hierro gastado, nombran a quienes trabajan la tierra y la fábrica. Sobre ellos se alza la A de la anarquía hecha cortacadenas: una herramienta que no fabrica nada, sino que rompe; su travesaño es la cadena ya cortada. El círculo que la encierra es un anillo de zarzas.
-
-    De las espinas brotan rosas oscuras. La emancipación no aparece como dominio productivista sobre la naturaleza, sino como ruptura de las cadenas y reparación de la fractura metabólica que el capital abre entre la sociedad y la tierra: Marx advertía que la producción capitalista socava al mismo tiempo la tierra y al trabajador.
+    El retrato de Marx con la mirada encendida acompaña a *Nec plus ultra* desde su primera etapa. No es una imagen de culto, sino una provocación: la crítica de la economía política leída desde el presente, con los ojos puestos en las formas actuales de dominación.
 
 # ---------------- Ensayos ----------------
 ensayos:
