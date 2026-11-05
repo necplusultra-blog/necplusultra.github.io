@@ -42,8 +42,8 @@ hero:
   boton_secundario_texto: Escuchar el taller
   boton_secundario_enlace: "#podcast"
   # Si sube una imagen aquí, reemplaza al símbolo dibujado.
-  imagen: /assets/img/necplusultra-simbolo.jpg
-  pie_imagen: "Francis Bacon, Instauratio Magna (1620): la nave cruza las columnas de Hércules"
+  imagen: /assets/img/necplusultra-emblema.svg
+  pie_imagen: La hoz y el martillo en flor
   cifras:
     - numero: "6"
       texto: ensayos publicados
@@ -78,11 +78,11 @@ manifiesto:
 
 # ---------------- Sobre el símbolo ----------------
 simbolo:
-  titulo: Sobre la imagen
+  titulo: Sobre el emblema
   texto: |
-    Las columnas de Hércules, en el estrecho de Gibraltar, señalaban el límite del mundo conocido; la tradición les atribuyó la inscripción *Nec plus ultra*: no hay nada más allá. En la portada de la *Instauratio Magna* (1620), Francis Bacon puso una nave que las atraviesa hacia mar abierto, con la leyenda *Multi pertransibunt & augebitur scientia*: muchos pasarán, y el saber aumentará.
+    La hoz y el martillo nombran la unión de quienes trabajan la tierra y la fábrica. Aquí aparecen cubiertos por enredaderas en flor: el comunismo no como dominio productivista sobre la naturaleza, sino como reparación de la fractura metabólica que el capital abre entre la sociedad y la tierra.
 
-    El límite deja de ser una prohibición y se vuelve un umbral. Pensar los límites inmanentes del capital es, también, preguntar por lo que podría existir más allá de ellos.
+    Marx advertía que la producción capitalista prospera socavando al mismo tiempo las dos fuentes de toda riqueza: la tierra y el trabajador. Liberadas de la valorización, las herramientas del trabajo dejan de servir a la devastación y vuelven a formar parte de un mundo vivo que rebrota.
 
 # ---------------- Ensayos ----------------
 ensayos:

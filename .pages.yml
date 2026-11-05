@@ -156,7 +156,7 @@ content:
           - { name: boton_principal_enlace, label: Botón principal · enlace, type: string }
           - { name: boton_secundario_texto, label: Botón secundario · texto, type: string }
           - { name: boton_secundario_enlace, label: Botón secundario · enlace, type: string }
-          - { name: imagen, label: Imagen de portada (grabado), type: image }
+          - { name: imagen, label: Emblema de portada, type: image }
           - { name: pie_imagen, label: Pie de la imagen, type: string }
           - name: cifras
             label: Cifras
@@ -187,7 +187,7 @@ content:
               - { name: texto, label: Texto, type: text }
 
       - name: simbolo
-        label: Sobre la imagen de portada
+        label: Sobre el emblema
         type: object
         fields:
           - { name: titulo, label: Título, type: string }

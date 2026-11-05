@@ -234,3 +234,10 @@ button.tag.is-active { color: var(--ink); border-color: var(--accent); backgroun
   .reveal { opacity: 1 !important; transform: none !important; }
   h1 { font-size: 24pt !important; }
 }
+
+/* ---------- Emblema ---------- */
+.emblema-img {
+  border-radius: 50%;
+  box-shadow: 0 40px 80px -40px rgba(0,0,0,.8), 0 0 0 1px var(--line);
+  animation: emerger 2.2s .2s cubic-bezier(.2,.7,.2,1) both;
+}

@@ -7,7 +7,10 @@
   <title>{% if page.title %}{{ page.title | strip_html }} — {% endif %}{{ s.nombre }} {{ s.nombre_acento }}{% unless page.title %} — {{ s.lema }}{% endunless %}</title>
   <meta name="description" content="{% if page.resumen %}{{ page.resumen | strip_html | escape }}{% else %}{{ s.descripcion | escape }}{% endif %}" />
   <meta name="theme-color" content="#0d1117" />
+  <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32" />
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}" />
+  <meta property="og:image" content="{{ site.url }}{{ '/assets/img/necplusultra-emblema.png' | relative_url }}" />
 
   <!-- Aplicar tema guardado antes de pintar -->
   <script>
